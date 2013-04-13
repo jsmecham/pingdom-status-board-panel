@@ -9,8 +9,8 @@ require "sinatra/reloader" if development?
 
 # Credentials -----------------------------------------------------------------
 
-set :email, ""
-set :password, ""
+set :email, ENV["PINGDOM_EMAIL"]
+set :password, ENV["PINGDOM_PASSWORD"]
 set :app_key, ""
 
 # Configuration ---------------------------------------------------------------
