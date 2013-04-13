@@ -2,7 +2,7 @@
 %h1= @check["name"]
 
 .status-icon{ class: @check["status"] }
-  - if @check["status"] == "ok"
+  - if @check["status"] == "up"
     &#xf058;
   - elsif @check["status"] == "down"
     &#xf06a;
