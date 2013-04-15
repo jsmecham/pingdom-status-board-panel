@@ -4,8 +4,8 @@
   %head
 
     %meta{ :charset => "utf-8" }
-    %meta{ "http-equiv" => "refresh", :content => 60 }
-    %meta{ "http-equiv" => "Cache-Control", :content => "no-cache" }
+    %meta{ "http-equiv" => "Refresh", :content => 60 }
+    -# %meta{ "http-equiv" => "Cache-Control", :content => "no-cache" }
 
     %title Pingdom Status
 
@@ -13,4 +13,5 @@
 
   %body
 
-    = yield
+    .widget
+      = yield

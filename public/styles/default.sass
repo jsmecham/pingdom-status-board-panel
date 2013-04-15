@@ -1,42 +1,117 @@
 
-@font-face
-  font-family: "FontAwesome"
-  src: url("../fonts/font-awesome.otf")
+*
+  box-sizing: border-box
 
 body
-  font-family: "Roadgeek 2005 Series C"
+  font-family: "Roadgeek 2005 Series D"
   text-align: center
+  margin: 0
+  padding: 0
 
 h1
-  color: rgb(126, 126, 126)
+  height: 64px
+  line-height: 64px
   margin: 0
-  font-size: 24px
-
-.status-icon
-  margin: 20px
-  font-family: "FontAwesome"
-  font-size: 128px
+  text-transform: uppercase
+  font-size: 16px
+  color: #7e7e7e
+  text-shadow: 0 -1px 0 black
+  overflow: hidden
+  text-overflow: ellipsis
 
 .status-text
+  line-height: 64px
   font-size: 18px
+  text-transform: uppercase
 
   .status-state
     display: inline-block
+    display: none
     margin-right: 10px
+
+    &.up
+      color: rgb(0, 186, 0)
+
+    &.down, &.unconfirmed_down
+      color: rgb(255, 48, 0)
+
+    &.unknown
+      color: rgb(255,198,0)
+
+    &.paused
+      color: rgb(0, 108, 230)
 
   .status-time
     display: inline-block
-    color: rgb(174, 183, 188)
+    color: white
 
-.up
-  color: rgb(0, 186, 0)
+.status-icon-container
+  position: relative
+  margin-left: auto
+  margin-right: auto
+  height: 128px
+  width: 128px
+  border-radius: 64px
+  background: -webkit-linear-gradient(#000000 0%, #060606 50%, #121212 50%, #272727 100%)
 
-.down
-.unconfirmed_down
-  color: rgb(255, 48, 0)
+  .status-icon
+    position: absolute
+    top: 16px
+    left: 16px
+    right: 16px
+    bottom: 16px
+    height: 96px
+    width: 96px
+    border-radius: 48px
+    position: relative
+    padding: 0.25em 0.5em 0.3em 0.5em
+    border: 2px solid #999
+    background-color: #666
+    background-color: rgba(128, 128, 128, 0.75)
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 90%, from(rgba(64,64,64,0.75)), to(rgba(192,192,192,0.9)))
 
-.unknown
-  color: rgb(255,198,0)
+    &.up
+      background-color: rgba(0, 186, 0, 0.75)
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 90%, from(rgba(0, 122, 0, 0.75)), to(rgba(0, 250, 0, 0.9)))
+      border-color: rgba(0, 186, 0, 0.75)
+      box-shadow: rgba(0, 186, 0, 0.75) 0px 0px 24px
 
-.paused
-  color: rgb(0, 108, 230)
+    &.down, &.unconfirmed_down
+      background-color: rgba(255, 48, 0, 0.75)
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 90%, from(rgba(191, 0, 0, 0.75)), to(rgba(255, 112, 0, 0.9)))
+      border-color: rgba(255, 48, 0, 0.75)
+      box-shadow: rgba(255, 48, 0, 0.75) 0px 0px 24px
+
+    &.unknown, &.paused
+      background-color: rgba(174, 183, 188, 0.75)
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 90%, from(rgba(110, 119, 124, 0.75)), to(rgba(238, 247, 252, 0.9)))
+      border-color: rgba(174, 183, 188, 0.75)
+      box-shadow: rgba(174, 183, 188, 0.75) 0px 0px 24px
+
+    .status-icon-reflection
+      position: absolute
+      display: block
+      width: 64px
+      left: 14px
+      top: 5px
+      height: 42px
+      border-radius: 50%
+      background-color: rgba(255,255,255,0.1)
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0.75)), to(rgba(255,255,255,0)))
+
+// body
+//   background-color: black
+//   .widget
+//     width: 256px
+//     height: 256px
+//     margin: 40px
+//     margin-right: auto
+//     margin-left: auto
+//     overflow: hidden
+//     border: 1px solid #262626
+//     border-top-color: #3e3e3e
+//     border-bottom-color: #181818
+//     background: -webkit-linear-gradient(#272727 0%, #121212 50%, #060606 50%, #000000 100%)
+//     border-radius: 3px
+//     font-size: 24px
+//     text-align: center

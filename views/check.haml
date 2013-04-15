@@ -1,16 +1,14 @@
 
-%h1= @check["name"]
+%h1
+  = @check["name"]
 
-.status-icon{ class: @check["status"] }
-  - if @check["status"] == "up"
-    &#xf058;
-  - elsif @check["status"] == "down"
-    &#xf06a;
-  - else
-    &#xf059;
+.status-icon-container
+  .status-icon.shiny-blue{ class: @check["status"] }
+    .status-icon-reflection
 
 .status-text
   .status-state{ class: @check["status"] }
     = @check["status"].capitalize
   .status-time
-    = "#{@check["lastresponsetime"]}ms"
+    = "#{@check["lastresponsetime"]}"
+    %small ms
