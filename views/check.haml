@@ -10,5 +10,6 @@
   .status-state{ class: @check["status"] }
     = @check["status"].capitalize
   .status-time
-    = "#{@check["lastresponsetime"]}"
-    %small ms
+    - unless @check["lastresponsetime"].nil?
+      = "#{@check["lastresponsetime"]}"
+      %small ms
