@@ -7,7 +7,7 @@ handleRefresh = ->
 refresh = ->
   xhr = new XMLHttpRequest()
   xhr.onload = handleRefresh
-  xhr.open("get", window.location.href, true)
+  xhr.open("get", document.URL, true)
   xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest")
   xhr.send()
   console.log "loading", window.location.href
