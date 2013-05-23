@@ -1,11 +1,8 @@
 
-require "base64"
-require "multi_json"
-require "open-uri"
-require "sass"
-require "sinatra"
-require "sinatra/json"
 require "sinatra/reloader" if development?
+require "base64"
+require "json"
+require "open-uri"
 
 # Credentials -----------------------------------------------------------------
 
@@ -26,17 +23,23 @@ get "/check/:check_id" do |check_id|
 
   # Request Check Detail from Pingdom API
   @check = open("https://api.pingdom.com/api/2.0/checks/#{check_id}", "App-Key" => app_key, "Authorization" => "Basic #{authorization}") do |response|
-    MultiJson.load(response.read)["check"]
+    JSON.parse(response.read)["check"]
   end
 
   haml :check
 
 end
 
-# Process Assets --------------------------------------------------------------
+# Process Assets -------------------------------------------------------------
 
 get "/styles/:stylesheet.css" do |stylesheet|
   content_type "text/css"
   template = File.read(File.join(settings.styles_path, "#{stylesheet}.sass"))
   Sass::Engine.new(template).render
+end
+
+get "/scripts/:script.js" do |script|
+  content_type "application/javascript"
+  template = File.read(File.join(settings.scripts_path, "#{script}.coffee"))
+  CoffeeScript.compile(template)
 end
