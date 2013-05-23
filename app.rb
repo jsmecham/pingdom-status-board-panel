@@ -37,7 +37,11 @@ get "/check/:check_id" do |check_id|
     JSON.parse(response.read)["check"]
   end
 
-  haml :check
+  if request.xhr?
+    haml :check, :layout => false
+  else 
+    haml :check
+  end
 
 end
 

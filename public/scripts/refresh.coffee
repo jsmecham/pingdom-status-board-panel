@@ -1,15 +1,8 @@
 
 refreshInterval = 60 * 1000 # 1 Minute
 
-handleRefresh = ->
-  document.querySelector(".widget").innerHTML = this.response
-
 refresh = ->
-  xhr = new XMLHttpRequest()
-  xhr.onload = handleRefresh
-  xhr.open("get", document.URL, true)
-  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest")
-  xhr.send()
-  console.log "loading", window.location.href
+  $.get document.URL, (response) ->
+    $(".widget").html(response)
 
 setInterval(refresh, refreshInterval)
