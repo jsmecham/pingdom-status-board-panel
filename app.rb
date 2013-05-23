@@ -1,18 +1,26 @@
+#
+# Pingdom Widget for Status Board
+#
 
 require "sinatra/reloader" if development?
 require "base64"
 require "json"
 require "open-uri"
 
-# Credentials -----------------------------------------------------------------
+# Configuration --------------------------------------------------------------
 
-set :email, ENV["PINGDOM_EMAIL"]
-set :password, ENV["PINGDOM_PASSWORD"]
-set :app_key, ""
+configure do
+  set :email, ENV["PINGDOM_EMAIL"]
+  set :password, ENV["PINGDOM_PASSWORD"]
+  set :app_key, ""
+  set :styles_path, "#{File.dirname(__FILE__)}/public/styles"
+  set :scripts_path, "#{File.dirname(__FILE__)}/public/scripts"
+end
 
-# Configuration ---------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
-set :styles_path, "#{File.dirname(__FILE__)}/public/styles"
+get "/" do
+end
 
 # Checks ----------------------------------------------------------------------
 
