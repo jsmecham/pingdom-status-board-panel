@@ -10,11 +10,14 @@ require "open-uri"
 # Configuration --------------------------------------------------------------
 
 configure do
+
   set :email, ENV["PINGDOM_EMAIL"]
   set :password, ENV["PINGDOM_PASSWORD"]
   set :app_key, ""
   set :styles_path, "#{File.dirname(__FILE__)}/public/styles"
   set :scripts_path, "#{File.dirname(__FILE__)}/public/scripts"
+  set :session_secret, ENV["SESSION_SECRET"] unless ENV["SESSION_SECRET"].nil?
+
 end
 
 # -----------------------------------------------------------------------------
