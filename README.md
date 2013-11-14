@@ -1,5 +1,7 @@
 # Pingdom Widget for Status Board
 
+![Screenshot](http://cloud.mecham.me/image/3n3x2w0g2W2L/pingdom-check.png)
+
 This Sinatra app can be used to pull in the current status of a service
 check from the [Pingdom](http://pingdom.com) service and display it on your
 [Status Board](http://panic.com/statusboard).
