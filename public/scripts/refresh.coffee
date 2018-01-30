@@ -6,6 +6,6 @@ refresh = ->
   queryString = window.location.search.substring(1)
   queryString = queryString.replace("/", "")
   $.get path, queryString, (response) ->
-    $(".widget").html(response)
+    $(".wrapper").html(response)
 
 setInterval(refresh, refreshInterval)
