@@ -1,5 +1,5 @@
 #
-# Pingdom Widget for Status Board
+# Pingdom Status Board Panel
 #
 
 require "sinatra/reloader" if development?
