@@ -50,3 +50,9 @@ DEPENDENCIES
   sass
   sinatra
   sinatra-contrib
+
+RUBY VERSION
+   ruby 2.4.3p205
+
+BUNDLED WITH
+   1.16.1
